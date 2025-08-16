@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>제대일 계산기 (병역계산 도구)</title>
-  <!-- 원래 UI 스타일(사용하신 Tailwind-like 유틸리티를 그대로 유지) -->
+  <!-- 원래 UI 스타일(사용한 Tailwind-like 유틸리티를 그대로 유지) -->
   <style>
     /* --- 원본 Tailwind-like 유틸리티 (원래 UI 유지) --- */
     :root { --tw-border-spacing-x: 0; --tw-border-spacing-y: 0; --tw-translate-x: 0; --tw-translate-y: 0; --tw-rotate: 0; --tw-skew-x: 0; --tw-skew-y: 0; --tw-scale-x: 1; --tw-scale-y: 1; --tw-pan-x: ; --tw-pan-y: ; --tw-pinch-zoom: ; --tw-scroll-snap-strictness: proximity; --tw-gradient-from-position: ; --tw-gradient-via-position: ; --tw-gradient-to-position: ; --tw-ordinal: ; --tw-slashed-zero: ; --tw-numeric-figure: ; --tw-numeric-spacing: ; --tw-numeric-fraction: ; --tw-ring-inset: ; --tw-ring-offset-width: 0px; --tw-ring-offset-color: #fff; --tw-ring-color: rgb(59 130 246 / 0.5); --tw-ring-offset-shadow: 0 0 #0000; --tw-ring-shadow: 0 0 #0000; --tw-shadow: 0 0 #0000; --tw-shadow-colored: 0 0 #0000; --tw-blur: ; --tw-brightness: ; --tw-contrast: ; --tw-grayscale: ; --tw-hue-rotate: ; --tw-invert: ; --tw-saturate: ; --tw-sepia: ; --tw-drop-shadow: ; --tw-backdrop-blur: ; --tw-backdrop-brightness: ; --tw-backdrop-contrast: ; --tw-backdrop-grayscale: ; --tw-backdrop-hue-rotate: ; --tw-backdrop-invert: ; --tw-backdrop-opacity: ; --tw-backdrop-saturate: ; --tw-backdrop-sepia: ; }
@@ -187,7 +187,7 @@
 
       const SERVICE_MONTHS = { army: 18, navy: 20, airforce: 21, marines: 18 };
 
-      // 원래 사용하신 공휴일 맵을 그대로 둡니다.
+      // 원래 사용한 공휴일 맵을 그대로 둡니다.
       const KOREAN_HOLIDAYS = new Map([
         ['2024-08-15', '광복절'], ['2024-09-16', '추석 연휴'], ['2024-09-17', '추석'], ['2024-09-18', '추석 연휴'], ['2024-10-03', '개천절'], ['2024-10-09', '한글날'], ['2024-12-25', '크리스마스'],
         ['2025-01-01', '신정'], ['2025-01-28', '설날 연휴'], ['2025-01-29', '설날'], ['2025-01-30', '설날 연휴'], ['2025-03-01', '3.1절'], ['2025-05-01', '근로자의 날'], ['2025-05-05', '어린이날'], ['2025-05-06', '대체공휴일'], ['2025-06-06', '현충일'], ['2025-08-15', '광복절'], ['2025-10-03', '개천절'], ['2025-10-06', '추석'], ['2025-10-07', '추석 연휴'], ['2025-10-08', '대체공휴일(추석)'], ['2025-10-09', '한글날'], ['2025-12-25', '크리스마스'],
@@ -210,10 +210,10 @@
         const enlistmentDate = new Date(enlistmentDateStr + 'T00:00:00');
         enlistmentDate.setHours(0,0,0,0);
 
-        // 제대일 계산: 서비스 개월 수 더하고 마지막 날을 포함하도록 -1일 처리
+        // 제대일 계산: 서비스 개월 수 더하기
         const dischargeDate = new Date(enlistmentDate);
         dischargeDate.setMonth(dischargeDate.getMonth() + SERVICE_MONTHS[serviceBranchEl.value]);
-        dischargeDate.setDate(dischargeDate.getDate() - 1);
+        dischargeDate.setDate(dischargeDate.getDate() - 0);
         dischargeDate.setHours(0,0,0,0);
 
         const today = new Date();
