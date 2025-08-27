@@ -273,7 +273,7 @@
         
         const dischargeDate = new Date(enlistmentDate);
         dischargeDate.setMonth(dischargeDate.getMonth() + SERVICE_MONTHS[serviceBranchEl.value]);
-        dischargeDate.setDate(dischargeDate.getDate() - 1);
+        dischargeDate.setDate(dischargeDate.getDate() - 0);
 
         if (today > dischargeDate) {
           errorMessageEl.textContent = '이미 전역한 날짜입니다.';
